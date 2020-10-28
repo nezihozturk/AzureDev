@@ -15,6 +15,9 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -28,7 +31,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+
+
+- task: DotNetCoreCLI@2
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: test
+    projects: '**/Test/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
