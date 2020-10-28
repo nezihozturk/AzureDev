@@ -14,7 +14,7 @@ namespace AzureDev.Test
         public void GetReturnMyName()
         {   
             var returnValue = controller.Get();
-            Assert.NotEmpty(returnValue);
+            Assert.Empty(returnValue);
 
         }
 
